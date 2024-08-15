@@ -55,6 +55,19 @@ body{
 	color:#888;
 }
 
+.background-image {
+    background-image: url('img/background.jpg'); /* Replace with your image path */
+    background-size: cover; /* Make the background image cover the entire element */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    height: 100vh; /* Full viewport height */
+    color: white; /* Text color to stand out against the background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 .main-content {
     background: linear-gradient(to left, white, lightblue);
 	min-height: 450px;
@@ -324,6 +337,7 @@ body{
 .header{
 	background-color:#fff;
 	position:relative;
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 .header .navbar-collapse{
 	padding:0;

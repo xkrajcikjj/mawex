@@ -27,7 +27,6 @@ Version:	1.1
 * Scroll Up JS
 * Animate Scroll JS
 * Stellar JS
-* Google Maps JS
 * Preloader JS
 =========================================
 [End Activation Code]
@@ -319,25 +318,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		$.stellar({
 		  horizontalOffset: 0,
 		  verticalOffset: 0
-		});
-
-		/*====================
-			Google Maps JS
-		======================*/
-		var map = new GMaps({
-				el: '#map',
-				lat: 23.011245,
-				lng: 90.884780,
-				scrollwheel: false,
-			});
-			map.addMarker({
-				lat: 23.011245,
-				lng: 90.884780,
-				title: 'Marker with InfoWindow',
-				infoWindow: {
-				content: '<p>welcome to Medipro</p>'
-			}
-		
 		});
 	});
 	

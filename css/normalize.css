@@ -508,7 +508,11 @@ Preloader Area CSS
 .breadcrumbs {
 	background: linear-gradient(to left, rgb(0, 80, 186), rgb(220, 232, 237));	
 	position: relative;
-	padding: 70px 0px;
+	padding: 15px 0px;
+}
+
+.breadcrumbs .overlay{
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 .breadcrumbs .bread-inner{
 	z-index:22;
