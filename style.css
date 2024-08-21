@@ -55,9 +55,12 @@ body{
 	color:#888;
 }
 
+
+/* Container for text and SVG */
 .containerfortext {
     position: relative;
-    padding: 20px; /* Adjust padding as needed */
+    padding: 20px;
+    margin-top: 100px; /* Adjust based on your needs */
     overflow: hidden; /* Ensures the container wraps around floated elements */
 	background-color: rgb(255, 255, 255);
 	padding-left: 70px;
@@ -67,12 +70,18 @@ body{
 	border-radius: 10px;
 }
 
+/* Clearfix to handle floated elements */
+.containerfortext::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .svg-image {
     float: right; /* Floats the image to the right */
-    width: 150px; /* Adjust size as needed */
+    width: 150px; /* Default size for larger screens */
     height: auto; /* Maintain aspect ratio */
-    margin: 0 0 10px 10px; /* Add space around the image */
-    display: block; /* Ensures the SVG is treated as a block element */
+    margin: 0 0 10px 10px; /* Space around the image */
 }
 
 .containerfortext p {
@@ -81,21 +90,46 @@ body{
     text-align: justify; /* Optional: aligns the text evenly */
 }
 
-/* Media Query for smaller screens */
-@media (max-width: 300px) { /* Adjust max-width as needed */
+/* Media Query for tablets */
+@media (max-width: 768px) {
     .svg-image {
-        width: 100px; /* Reduce SVG size for smaller screens */
+        width: 120px; /* Reduce SVG size for tablets */
+        margin: 0 0 10px 10px; /* Adjust margins for better spacing */
+    }
+
+    .containerfortext {
+        margin-top: 120px; /* Increase top margin for tablets */
+    }
+}
+
+/* Media Query for mobile phones */
+@media (max-width: 480px) {
+    .svg-image {
+        width: 100px; /* Further reduce SVG size for mobile phones */
         margin: 0 0 10px 0; /* Adjust margins for better spacing */
-        float: none; /* Remove float for smaller screens */
+        float: none; /* Remove float for mobile phones */
         display: block; /* Ensure block display */
         margin-left: auto; /* Center the SVG */
         margin-right: auto; /* Center the SVG */
     }
 
-    .containerfortext p {
-        text-align: left; /* Align text to the left for smaller screens */
+    .containerfortext {
+        margin-top: 140px; /* Increase top margin for mobile phones */
     }
 }
+
+/* Media Query for very small screens */
+@media (max-width: 320px) {
+    .svg-image {
+        width: 80px; /* Further reduce SVG size for very small screens */
+    }
+
+    .containerfortext {
+        margin-top: 160px; /* Increase top margin for very small screens */
+        padding: 5px; /* Adjust padding if necessary */
+    }
+}
+
 
 .textblock {
     width: 100%; /* Adjust width as needed */
