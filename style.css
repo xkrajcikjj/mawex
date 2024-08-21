@@ -125,7 +125,7 @@ body{
     }
 
     .containerfortext {
-        margin-top: 160px; /* Increase top margin for very small screens */
+        margin-top: 300px; /* Increase top margin for very small screens */
         padding: 5px; /* Adjust padding if necessary */
     }
 }
