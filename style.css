@@ -59,8 +59,6 @@ body{
 /* Container for text and SVG */
 .containerfortext {
     position: relative;
-    padding: 20px;
-    margin-top: 100px; /* Adjust based on your needs */
     overflow: hidden; /* Ensures the container wraps around floated elements */
 	background-color: rgb(255, 255, 255);
 	padding-left: 70px;
@@ -98,7 +96,7 @@ body{
     }
 
     .containerfortext {
-        margin-top: 120px; /* Increase top margin for tablets */
+        margin-top: 200px; /* Increase top margin for tablets */
     }
 }
 
@@ -114,7 +112,7 @@ body{
     }
 
     .containerfortext {
-        margin-top: 140px; /* Increase top margin for mobile phones */
+        margin-top: 300px; /* Increase top margin for mobile phones */
     }
 }
 
