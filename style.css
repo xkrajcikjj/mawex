@@ -55,14 +55,71 @@ body{
 	color:#888;
 }
 
-.background-image {
-    background-image: url('img/background.jpg'); /* Replace with your image path */
-    background-size: cover; /* Make the background image cover the entire element */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent the image from repeating */
-    height: 100vh; /* Full viewport height */
-    color: white; /* Text color to stand out against the background */
+.containerfortext {
     display: flex;
+    flex-direction: column;
+    height: 60vh; /* Adjust this based on your needs */
+    justify-content: space-between;
+}
+
+.textblock {
+    width: 50%; /* Adjust width as needed */
+}
+
+.textblock-left {
+    align-self: flex-start;
+	background-color: #ffffffe1;
+	border-radius: 10px;
+	padding: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.textblock-right {
+    align-self: flex-end;
+	background-color: #ffffffe1;
+	border-radius: 10px;
+	padding: 10px;
+	padding-bottom: 25px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.custom-table {
+    border-collapse: collapse;
+    width: 100%; /* Increase the width to make the table bigger */
+    margin: 60px auto; /* Center the table horizontally */
+    background-color: rgb(255, 255, 255); /* Slightly transparent white background */
+    border-radius: 10px; /* Rounded outside border */
+    overflow: hidden; /* Ensure rounded corners are visible */
+    color: #333; /* Dark gray text color for better visibility */
+    transform: scale(1.1); /* Scale the table to 130% of its original size */
+    transform-origin: center; /* Keep the scaling centered */
+}
+
+.custom-table td {
+    padding: 25px; /* Increase padding for a taller table */
+	padding-left: 40px;
+	padding-right: 40px;
+    border-bottom: 3px solid rgba(170, 170, 170, 0.224); /* Lighter and transparent border */
+    text-align: left; /* Align text to the left */
+}
+
+.custom-table td:first-child {
+    font-weight: bold;
+}
+
+.custom-table tr:last-child td {
+    border-bottom: none; /* Remove border for the last row */
+}
+
+.background-image {
+    background-image: url(img/background.jpg);
+    background-size: cover;
+    background-position: bottom center; /* Align the background image to the bottom */
+    background-repeat: no-repeat; /* Avoid repeating the image */
+    height: 100vh; /* Adjust this if needed */
+    color: white;
+    display: flex; /* Corrected display property */
     justify-content: center;
     align-items: center;
     text-align: center;
