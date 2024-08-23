@@ -31,15 +31,27 @@ Version:	1.1
 =========================================
 [End Activation Code]
 =========================================*/ 
+
+document.getElementById('showMoreBtn').addEventListener('click', function() {
+    const additionalImages = document.getElementById('additionalImages');
+    const isHidden = additionalImages.classList.contains('hidden');
+
+    if (isHidden) {
+        additionalImages.classList.remove('hidden');
+        this.textContent = '-';
+    } else {
+        additionalImages.classList.add('hidden');
+        this.textContent = '+';
+    }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     var dropdowns = document.querySelectorAll(".dropdown-btn");
 
     dropdowns.forEach(function (btn) {
         btn.addEventListener("click", function () {
             this.classList.toggle("active");
-
             var content = this.nextElementSibling;
-
             if (content.classList.contains("show")) {
                 content.classList.remove("show");
                 content.style.maxHeight = null;
@@ -50,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-
 
 (function($) {
     "use strict";
