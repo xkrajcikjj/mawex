@@ -227,6 +227,13 @@ body{
     .containerfortext {
         margin-top: 300px; /* Increase top margin for mobile phones */
     }
+
+	.header .logo {
+		align-items: center;
+		padding-top: 5px;
+		width: 100px;
+		position: absolute;
+	}
 }
 
 /* Media Query for very small screens */
