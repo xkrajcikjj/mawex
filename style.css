@@ -55,73 +55,120 @@ body{
 	color:#888;
 }
 
-.containervid {
-    display: flex;
-    background: #f7f7f7;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border-radius: 8px;
-	justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */	
-}
-
-.left {
-    flex: 1;
-    margin-right: 20px;
-}
-
-.right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-	height: 100%; /* Ensures the height is consistent */
-    position: relative;
-}
-
-.right img {
-    max-width: 100%;
-    margin-bottom: 10px;
-    border-radius: 8px;
-}
-
-#showMoreBtn {
-    width: 80px;
-    height: 80px;
-    font-size: 32px;
-    color: #333333;
-    background-color: rgba(200, 200, 200, 0.7);
-    border: none;
-    border-radius: 50%;
-    cursor: pointer;
-    margin-bottom: 20px;
-    transition: all 0.3s ease;
+.parent-element {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    height: 100vh; /* Full height of viewport */
 }
 
-#showMoreBtn:hover {
-	background-color: rgba(180, 180, 180, 0.9);
-    transform: scale(1.05);
+.containergal {
+    display: flex;
+    width: 65%;
+    max-width: max-content; /* Reduced size */
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    flex-wrap: wrap;
 }
 
-.hidden {
-    display: none;
+.video-section {
+    flex: 2;
+    max-width: 50%; /* Reduced width */
+    background: #000;
 }
 
-#additionalImages {
-    justify-content: space-between; /* Space out the images evenly */
-    width: 100%; /* Ensure the images take up the full width */
+.video-section video {
+    width: 100%;
+    height: 100%;
+    border-right: 2px solid #ddd;
+    object-fit: cover;
+    border-radius: 8px 0 0 8px;
 }
 
-#additionalImages img {
-    width: 48%; /* Adjust the width so that two images fit side by side */
-    margin-bottom: 0; /* Remove bottom margin since they're side by side */
+.image-section {
+    flex: 1;
+    padding: 10px; /* Reduced padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 50%; /* Reduced width */
+}
+
+.top-image {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+.top-image img {
+    width: 70%; /* Image takes less width */
     border-radius: 8px;
 }
 
+.top-image button {
+    padding: 10px 15px; /* Slightly increased padding */
+    font-size: 16px; /* Slightly increased font size */
+    background-color: rgba(128, 128, 128, 0.7); /* Gray with transparency */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-left: 10px; /* Space between image and button */
+}
+
+.top-image button:hover {
+    background-color: rgba(128, 128, 128, 0.9); /* Darker gray on hover */
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.additional-images {
+    display: none;
+    flex-direction: row; /* Changed to row for side-by-side display */
+    gap: 8px; /* Spacing between images */
+    width: 100%;
+}
+
+.additional-images img {
+    width: 48%; /* Adjusted width for side-by-side display */
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .video-section, .image-section {
+        max-width: 100%;
+    }
+
+    .video-section {
+        width: 100%;
+    }
+
+    .video-section video {
+        border-radius: 8px 8px 0 0;
+    }
+
+    .image-section {
+        padding: 8px;
+    }
+
+    .top-image img {
+        width: 65%; /* Image width for smaller screens */
+    }
+
+    .additional-images img {
+        width: 48%; /* Adjusted for smaller screens too */
+    }
+}
 /* Container for text and SVG */
 .containerfortext {
     position: relative;
@@ -248,11 +295,16 @@ body{
 
 .main-content {
     background: linear-gradient(to left, white, lightblue);
-	min-height: 450px;
+	min-height: 200px;
 }
 
 .main-content p{
 	color: #000;
+}
+
+.kreslo {
+	width: 300px;
+	height: 390px;
 }
 
 /* Basic styling for the dropdown */

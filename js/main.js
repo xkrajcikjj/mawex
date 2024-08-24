@@ -32,18 +32,23 @@ Version:	1.1
 [End Activation Code]
 =========================================*/ 
 
-document.getElementById('showMoreBtn').addEventListener('click', function() {
-    const additionalImages = document.getElementById('additionalImages');
-    const isHidden = additionalImages.classList.contains('hidden');
 
-    if (isHidden) {
-        additionalImages.classList.remove('hidden');
-        this.textContent = '-';
-    } else {
-        additionalImages.classList.add('hidden');
-        this.textContent = '+';
-    }
-});
+const toggleButton = document.getElementById('toggleButton');
+
+if (toggleButton) {  // Check if the element exists
+    toggleButton.addEventListener('click', function() {
+        const additionalImages = document.getElementById('additionalImages');
+        const button = document.getElementById('toggleButton');
+        
+        if (additionalImages.style.display === 'flex') {
+            additionalImages.style.display = 'none';
+            button.textContent = '+';
+        } else {
+            additionalImages.style.display = 'flex';
+            button.textContent = '-';
+        }
+    });
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     var dropdowns = document.querySelectorAll(".dropdown-btn");
