@@ -59,175 +59,36 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Full height of viewport */
 }
 
-.containergal {
+.image-container {
     display: flex;
-    width: 65%;
-    max-width: max-content; /* Reduced size */
-    background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-    flex-wrap: wrap;
+    gap: 10px; /* Adjusts the space between images */
 }
 
-.video-section {
-    flex: 2;
-    max-width: 50%; /* Reduced width */
-    background: #000;
+.image-container img {
+    width: 250px;
+    height: auto;
+    border-radius: 5px; /* Optional: adds a slight border radius */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1); /* Optional: adds a slight shadow */
 }
-
-.video-section video {
-    width: 100%;
-    height: 100%;
-    border-right: 2px solid #ddd;
-    object-fit: cover;
-    border-radius: 8px 0 0 8px;
-}
-
-.image-section {
-    flex: 1;
-    padding: 10px; /* Reduced padding */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    max-width: 50%; /* Reduced width */
-}
-
-.top-image {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 10px; /* Reduced margin */
-}
-
-.top-image img {
-    width: 70%; /* Image takes less width */
-    border-radius: 8px;
-}
-
-.top-image button {
-    padding: 10px 15px; /* Slightly increased padding */
-    font-size: 16px; /* Slightly increased font size */
-    background-color: rgba(128, 128, 128, 0.7); /* Gray with transparency */
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    margin-left: 10px; /* Space between image and button */
-}
-
-.top-image button:hover {
-    background-color: rgba(128, 128, 128, 0.9); /* Darker gray on hover */
-    transform: scale(1.05); /* Slight zoom on hover */
-}
-
-.additional-images {
-    display: none;
-    flex-direction: row; /* Changed to row for side-by-side display */
-    gap: 8px; /* Spacing between images */
-    width: 100%;
-}
-
-.additional-images img {
-    width: 48%; /* Adjusted width for side-by-side display */
-    border-radius: 8px;
-}
-
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .video-section, .image-section {
-        max-width: 100%;
-    }
-
-    .video-section {
-        width: 100%;
-    }
-
-    .video-section video {
-        border-radius: 8px 8px 0 0;
-    }
-
-    .image-section {
-        padding: 8px;
-    }
-
-    .top-image img {
-        width: 65%; /* Image width for smaller screens */
-    }
-
-    .additional-images img {
-        width: 48%; /* Adjusted for smaller screens too */
+@media (max-width: 720px) {
+    .image-container img {
+        width: 150px; /* Reduce SVG size for tablets */
     }
 }
-/* Container for text and SVG */
-.containerfortext {
-    position: relative;
-    overflow: hidden; /* Ensures the container wraps around floated elements */
-	background-color: rgb(255, 255, 255);
-	padding-left: 70px;
-	padding-top: 40px;
-	padding-bottom: 40px;
-	padding-right: 70px;
-	border-radius: 10px;
-}
-
-/* Clearfix to handle floated elements */
-.containerfortext::after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-.svg-image {
-    float: right; /* Floats the image to the right */
-    width: 150px; /* Default size for larger screens */
-    height: auto; /* Maintain aspect ratio */
-    margin: 0 0 10px 10px; /* Space around the image */
-}
-
-.containerfortext p {
-    margin: 0;
-    padding: 0;
-    text-align: justify; /* Optional: aligns the text evenly */
-}
-
-/* Media Query for tablets */
-@media (max-width: 768px) {
-    .svg-image {
-        width: 120px; /* Reduce SVG size for tablets */
-        margin: 0 0 10px 10px; /* Adjust margins for better spacing */
-    }
-
-    .containerfortext {
-        margin-top: 200px; /* Increase top margin for tablets */
-    }
-}
-
-/* Media Query for mobile phones */
 @media (max-width: 480px) {
-    .svg-image {
-        width: 100px; /* Further reduce SVG size for mobile phones */
-        margin: 0 0 10px 0; /* Adjust margins for better spacing */
-        float: none; /* Remove float for mobile phones */
-        display: block; /* Ensure block display */
-        margin-left: auto; /* Center the SVG */
-        margin-right: auto; /* Center the SVG */
+    .image-container img {
+        width: 100px; /* Reduce SVG size for tablets */
     }
-
-    .containerfortext {
-        margin-top: 300px; /* Increase top margin for mobile phones */
+}
+@media (max-width: 320px) {
+    .image-container img {
+        width: 80px; /* Reduce SVG size for tablets */
     }
+}
 
+@media (max-width: 640px) {
 	.header .logo {
 		align-items: center;
 		padding-top: 5px;
@@ -236,17 +97,24 @@ body{
 	}
 }
 
-/* Media Query for very small screens */
-@media (max-width: 320px) {
-    .svg-image {
-        width: 80px; /* Further reduce SVG size for very small screens */
-    }
 
-    .containerfortext {
-        margin-top: 500px; /* Increase top margin for very small screens */
-        padding: 5px; /* Adjust padding if necessary */
-    }
+
+
+.svg-image{
+	width: 100px;
+	height: 100px;
 }
+
+.containerfortext{
+	background-color: white;
+	border-radius: 10px;
+	padding: 30px;
+}
+
+.containerfortext p {
+	text-align: center;
+}
+
 
 
 .textblock {
@@ -292,10 +160,11 @@ body{
 
 .backgroundi {
     background: linear-gradient(to top, white, lightblue, #4682B4); /* Gradient from white to a deeper blue */
-    height: 800px; /* Full viewport height */
+    min-height: 100vh; /* Full viewport height */
     display: flex; /* Flexbox for centering content */
+	flex-direction: column;
     justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+	align-items: center; /* Center vertically */
     color: black; /* Text color for visibility */
     text-align: center; /* Center text */
 }
@@ -4505,4 +4374,4 @@ body{
 }
 /*=========================
 	End Footer CSS
-===========================*/
+=========================== */

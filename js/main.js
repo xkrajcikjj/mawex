@@ -39,7 +39,7 @@ if (toggleButton) {  // Check if the element exists
     toggleButton.addEventListener('click', function() {
         const additionalImages = document.getElementById('additionalImages');
         const button = document.getElementById('toggleButton');
-        
+
         if (additionalImages.style.display === 'flex') {
             additionalImages.style.display = 'none';
             button.textContent = '+';
@@ -71,20 +71,13 @@ document.addEventListener("DOMContentLoaded", function () {
 (function($) {
     "use strict";
      $(document).on('ready', function() {
-	
-        jQuery(window).on('scroll', function() {
-			if ($(this).scrollTop() > 200) {
-				$('#header .header-inner').addClass("sticky");
-			} else {
-				$('#header .header-inner').removeClass("sticky");
-			}
-		});
-		
+
+
 		/*====================================
 			Sticky Header JS
 		======================================*/ 
 		jQuery(window).on('scroll', function() {
-			if ($(this).scrollTop() > 100) {
+			if ($(this).scrollTop() > 50) {
 				$('.header').addClass("sticky");
 			} else {
 				$('.header').removeClass("sticky");
