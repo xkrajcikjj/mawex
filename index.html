@@ -206,7 +206,24 @@
 		</section>
 
 		<section class="Feautes section">
-			<div class="container">
+			<div class="gallery">
+				<img src="img/obr_1.jpg" alt="Image 1" class="thumbnail" onclick="openGallery(0)">
+				<img src="img/obr_2.jpg" alt="Image 2" class="thumbnail" onclick="openGallery(1)">
+				<img src="img/obr_3.jpg" alt="Image 3" class="thumbnail" onclick="openGallery(2)">
+			</div>
+
+			<div class="lightbox" id="lightbox">
+				<span class="close" onclick="closeGallery()">&times;</span>
+				<img id="lightboxImage" src="" alt="Gallery Image">
+				<div class="controls">
+				<button onclick="prevImage()">&#10094;</button>
+				<button onclick="nextImage()">&#10095;</button>
+				</div>
+			</div>
+
+
+
+			<!-- <div class="container">
 				<div class="parent-element">
 					<div class="image-container">
 						<img src="img/obr_1.jpg" alt="Image 1">
@@ -214,8 +231,7 @@
 						<img src="img/obr_3.jpg" alt="Image 3">
 					</div>
 				</div>
-
-			</div>
+			</div> -->
 		</section>
 
 		<footer id="footer" class="footer">

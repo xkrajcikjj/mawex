@@ -32,6 +32,36 @@ Version:	1.1
 [End Activation Code]
 =========================================*/ 
 
+let currentIndex = 0;
+const images = [
+  "img/obr_1.jpg",
+  "img/obr_2.jpg",
+  "img/obr_3.jpg"
+];
+
+function openGallery(index) {
+  currentIndex = index;
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightboxImage');
+  lightbox.style.display = 'flex';
+  lightboxImage.src = images[currentIndex];
+}
+
+function closeGallery() {
+  const lightbox = document.getElementById('lightbox');
+  lightbox.style.display = 'none';
+}
+
+function nextImage() {
+  currentIndex = (currentIndex + 1) % images.length;
+  document.getElementById('lightboxImage').src = images[currentIndex];
+}
+
+function prevImage() {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  document.getElementById('lightboxImage').src = images[currentIndex];
+}
+
 
 const toggleButton = document.getElementById('toggleButton');
 
