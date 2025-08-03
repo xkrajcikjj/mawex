@@ -1,0 +1,325 @@
+/* HEADER */
+header {
+  background-color: #e0f0ff;
+  padding: 1.5rem 10vw; /* dvojnásobné odsadenie zľava aj sprava */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  transition: box-shadow 0.3s, background 0.3s, backdrop-filter 0.3s;
+  backdrop-filter: none;
+  width: 100%;
+  left: 0;
+  margin-left: 0;
+}
+
+.logo {
+  height: 30px; /* menšie logo */
+  width: auto;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  margin-left: 4vw; /* dvojnásobné odsadenie od ľavého okraja */
+}
+
+nav,
+.navbar {
+  display: flex;
+  gap: 2rem; /* menší rozostup medzi položkami */
+  align-items: center;
+  margin-right: 4vw;
+}
+
+nav a {
+  text-decoration: none;
+  color: #0077b6;
+  font-weight: 600;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 4px; /* jemná medzera pod rodičom */
+  background-color: #fff;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  flex-direction: column;
+  gap: 8px; /* rozostup medzi položkami */
+  border-radius: 8px;
+  padding: 8px 0;
+}
+
+.dropdown-content a {
+  color: #222;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+  background: transparent;
+  transition: background 0.2s;
+  border-radius: 4px;
+}
+
+.dropdown-content a:hover {
+  background: #e0f0ff;
+}
+
+/* Zobraz dropdown na hover len keď navbar NIE JE active */
+.navbar:not(.active) .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Zobraz dropdown na klik (open) */
+.dropdown.open .dropdown-content {
+  display: block;
+}
+
+.arrow {
+  display: inline-block;
+  margin-left: 5px;
+  transition: transform 0.3s;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+
+.dropdown:hover .arrow,
+.dropdown:focus-within .arrow,
+.dropdown.open .arrow {
+  transform: rotate(180deg);
+}
+
+/* Hamburger menu button */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2em;
+  cursor: pointer;
+  color: #0077b6;
+  align-self: flex-start;
+  margin-top: -6px; /* posunie ikonku vyššie k logu */
+  transition: background 0.2s;
+  border-radius: 8px;
+  box-shadow: none; /* odstráni tieň */
+}
+
+/* Button na scroll hore */
+#scrollToTop {
+  position: fixed;
+  right: 2vw;
+  bottom: 2vw;
+  width: 56px;
+  height: 56px;
+  background: #0077b6;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0,119,182,0.18);
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  transition: background 0.2s, box-shadow 0.2s, opacity 0.3s;
+  opacity: 0.85;
+}
+
+#scrollToTop:hover {
+  background: #009688;
+  box-shadow: 0 8px 32px rgba(0,119,182,0.28);
+  opacity: 1;
+}
+
+.scroll-arrow {
+  display: inline-block;
+  font-size: 2em;
+  font-weight: bold;
+  color: #fff;
+  position: relative;
+  width: auto;
+  height: auto;
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 900px) {
+  header {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+  .logo {
+    height: 24px;
+  }
+  .logo-link {
+    margin-left: 2vw;
+  }
+  nav,
+  .navbar {
+    gap: 1.2rem; /* ešte menší rozostup na menších obrazovkách */
+    margin-right: 2vw;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+  .nav-toggle {
+    display: block;
+    margin-left: auto;
+    align-self: flex-start;
+    margin-top: -6px;
+    z-index: 101;
+  }
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem; /* menší rozostup medzi položkami */
+    padding: 2em 0 2em 6vw; /* väčšie odsadenie od ľavej strany */
+    display: none;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    border-radius: 0 0 32px 32px;
+    animation: navbarFadeIn 0.35s cubic-bezier(.4,0,.2,1);
+    z-index: 100;
+  }
+  .navbar.active {
+    display: flex;
+  }
+  .navbar > a,
+  .navbar .dropdown {
+    width: 100%;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e0f0ff;
+  }
+  .navbar > a:last-child,
+  .navbar .dropdown:last-child {
+    border-bottom: none;
+  }
+  .dropdown-content {
+    position: static;
+    box-shadow: none;
+    min-width: unset;
+    background: #fff;
+    gap: 10px;
+    border-radius: 16px;
+    padding: 10px 0 0 0;
+  }
+  .dropdown-content a {
+    padding: 14px 24px;
+    color: #222;
+    border-radius: 8px;
+    font-size: 1.08em;
+    transition: background 0.2s, box-shadow 0.2s;
+  }
+  .dropdown-content a:hover {
+    background: #e0f0ff;
+    box-shadow: 0 2px 8px rgba(0,119,182,0.08);
+  }
+}
+
+/* Moderný fade-in efekt pre mobilný navbar */
+@keyframes navbarFadeIn {
+  from { opacity: 0; transform: translateY(-16px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+/* Desktop: zobraz plusko len ak je navbar active, inak nič */
+.plus-icon {
+  display: none;
+}
+
+.navbar.active .plus-icon {
+  display: inline-block;
+  font-size: 1em;      /* menšie plusko */
+  font-weight: bold;
+  margin-left: 8px;
+  color: #0077b6;
+  transition: transform 0.3s, color 0.3s;
+}
+
+/* Efekt pri kliknutí na plusko (napr. zmena farby a otočenie) */
+.navbar.active .dropdown.open .plus-icon {
+  transform: rotate(45deg) scale(1.2);
+  color: #009688;
+}
+
+/* Menší text v dropdown položkách */
+@media (max-width: 600px) {
+  .dropdown-content a {
+    font-size: 0.85em; /* ešte menší text v dropdown položkách */
+    padding: 10px 18px;
+  }
+}
+
+/* Skryje šípku úplne */
+.arrow {
+  display: none !important;
+}
+
+/* Animovaná čiarka pod položkou pri hovere (iba keď navbar nie je active) */
+.navbar > a,
+.navbar .dropbtn {
+  position: relative;
+  overflow: visible;
+}
+
+.navbar:not(.active) > a::after,
+.navbar:not(.active) .dropbtn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -12px; /* väčšia medzera pod textom */
+  height: 2px;
+  background: #0077b6;
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(.4,0,.2,1);
+  border-radius: 2px;
+}
+
+.navbar:not(.active) > a:hover::after,
+.navbar:not(.active) .dropbtn:hover::after {
+  transform: scaleX(1);
+}
+
+/* Zobraz dropdown na hover len keď navbar NIE JE active a posuň ho tesne pod rodiča */
+.navbar:not(.active) .dropdown:hover .dropdown-content {
+  display: block;
+  top: 100%; /* zobrazí dropdown hneď pod rodičovským elementom */
+  margin-top: 4px; /* jemná medzera, ktorú oko nevníma, ale myš stihne prejsť */
+}
+
+/* Efekt pri skrolovaní: výraznejší tieň a jemné rozmazanie pozadia */
+header.scrolled {
+  box-shadow: 0 6px 32px rgba(0,119,182,0.18);
+  background-color: #e0f0ff;
+  backdrop-filter: blur(6px);
+}

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="sk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lekárska stránka</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style/styles.css" />
+    <link rel="stylesheet" href="style/navbar.css" />
+    <link rel="stylesheet" href="style/sections.css" />
+    <link rel="stylesheet" href="style/ems_gallery.css" />
+  </head>
+  <body id="home">
+    <!-- Header zostáva nezmenený -->
+    <header>
+      <a href="#home" class="logo-link">
+        <img src="imgs/logo.png" alt="Logo" class="logo" />
+      </a>
+      <button class="nav-toggle" aria-label="Otvoriť menu">
+        <span class="nav-toggle-icon">&#9776;</span>
+      </button>
+      <nav class="navbar">
+        <a href="#home">Domov</a>
+        <div class="dropdown">
+          <a class="dropbtn">
+            Produkty
+            <span class="dropdown-icon">
+              <span class="plus-icon">+</span>
+            </span>
+          </a>
+          <div class="dropdown-content">
+            <a href="#ems_kreslo">EMS kreslo</a>
+            <a href="#ems_counting">EMS Counting</a>
+            <a href="#co2_laser">CO2 Frakčný laser</a>
+            <a href="#diodovy_laser">Diódový laser</a>
+          </div>
+        </div>
+        <a href="#about">O nás</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+    </header>
+
+    <!-- Hlavná sekcia zostáva nezmenená -->
+    <section id="main">
+      <h2 class="section-title">Rehabilitačné a zdravotnícke prístroje</h2>
+      <div class="image-grid">
+        <a href="#ems_kreslo">
+          <div class="image-card">
+            <div class="image-title">EMS kreslo</div>
+            <div class="image-bg">
+              <img src="imgs/kresla/kreslo_t.png" alt="Obrázok 1" />
+            </div>
+          </div>
+        </a>
+        <a href="#ems_counting">
+          <div class="image-card">
+            <div class="image-title">EMS Counting</div>
+            <div class="image-bg">
+              <img src="imgs/lasery/ems_counting/ems_tit.png" alt="Obrázok 2" />
+            </div>
+          </div>
+        </a>
+        <a href="#co2_laser">
+          <div class="image-card">
+            <div class="image-title">CO2 Frakčný laser</div>
+            <div class="image-bg">
+              <img
+                src="imgs/lasery/co2_laser/CO2_tit-removebg-preview.png"
+                alt="Obrázok 3"
+              />
+            </div>
+          </div>
+        </a>
+        <a href="#diodovy_laser">
+          <div class="image-card">
+            <div class="image-title">Diódový laser</div>
+            <div class="image-bg">
+              <img
+                src="imgs/lasery/lasery_na_chlpky/tit_las-removebg-preview.png"
+                alt="Obrázok 4"
+              />
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- EMS Kreslo sekcia -->
+    <section id="ems_kreslo" class="product-section">
+      <div class="section-container">
+        <h3 class="section-main-title">EMS kreslo</h3>
+        <p class="section-description">
+          EMS (inkontinenčné elektromagnetické kreslo) kreslo využíva technológiu
+          vysokovýkonného fokusovaného elektromagnetického poľa na stimuláciu
+          hlbokých svalov panvového dna a obnovenie neuromuskulárnej kontroly.
+          Kľúčom k účinnosti je fokusácia elektromagnetickej energie, hĺbka
+          prieniku a stimulácia celého panvového dna. Počas jedinej terapie
+          dochádza k tisícom supramaximálnych kontrakcií svalov panvového dna, čo
+          je extrémne dôležité pri reedukácii svalov u inkontinentných pacientov.
+        </p>
+        
+        <!-- Galéria obrázkov EMS Kreslo -->
+        <div class="ems-gallery" id="ems-kreslo-gallery">
+          <div class="ems-gallery-grid">
+            <div class="ems-gallery-item">
+              <img
+                src="imgs/kresla/kreslo_1.png"
+                alt="EMS kreslo 1"
+                class="ems-gallery-img ems-kreslo-img"
+                data-index="0"
+                data-gallery="kreslo"
+              />
+            </div>
+            <div class="ems-gallery-item">
+              <img
+                src="imgs/kresla/kreslo_2.png"
+                alt="EMS kreslo 2"
+                class="ems-gallery-img ems-kreslo-img"
+                data-index="1"
+                data-gallery="kreslo"
+              />
+            </div>
+            <div class="ems-gallery-item">
+              <img
+                src="imgs/kresla/kreslo_t.png"
+                alt="EMS kreslo 3"
+                class="ems-gallery-img ems-kreslo-img"
+                data-index="2"
+                data-gallery="kreslo"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordion buttony -->
+        <div class="accordion-container">
+          <button class="ems-btn accordion-btn" data-target="ems-problemy">
+            <span class="btn-text">Aké problémy rieši?</span>
+            <span class="ems-arrow">&#9654;</span>
+          </button>
+          <div id="ems-problemy" class="ems-section accordion-content">
+            <div class="content-wrapper">
+              <p>
+                Oslabenie svalov panvového dna nastáva nielen s pribúdajúcim vekom,
+                ale aj tehotenstvom, pôrodom, menopauzou, cvičením, obezitou či
+                dvíhaním ťažkých bremien, pooperačne. V dôsledku toho sa môžu ako u
+                žien tak aj u mužov dostaviť problémy s únikom moču (inkontinenciou),
+                častým močením či problémy v intímnom živote. Preto je dôležitá
+                stimulácia a rehabilitácia nervov a posilňovanie svalov panvového dna.
+              </p>
+            </div>
+          </div>
+
+          <button class="ems-btn accordion-btn" data-target="ems-zeny">
+            <span class="btn-text">Ako EMS kreslo funguje u žien?</span>
+            <span class="ems-arrow">&#9654;</span>
+          </button>
+          <div id="ems-zeny" class="ems-section accordion-content">
+            <div class="content-wrapper">
+              <p>
+                STARNUTIE, PÔRODY A MENOPAUZA MÔŽU VIESŤ K INKONTINENCII<br /><br />
+                <b>Pred:</b> Svaly panvového dna neposkytujú dostatočnú podporu
+                orgánom, čím negatívne ovplyvňujú kontrolu močového mechúra.<br /><br />
+                <b>Behom terapie:</b> EMS kreslo kontrakciami účinne stimuluje svaly
+                panvového dna<br /><br />
+                <b>Po:</b> Stimulácia vedie k znovunadobudnutiu kontroly nad svalmi
+                panvového dna a lepšiemu ovládaniu močového mechúra.
+              </p>
+            </div>
+          </div>
+
+          <button class="ems-btn accordion-btn" data-target="ems-muzi">
+            <span class="btn-text">Ako EMS kreslo funguje u mužov?</span>
+            <span class="ems-arrow">&#9654;</span>
+          </button>
+          <div id="ems-muzi" class="ems-section accordion-content">
+            <div class="content-wrapper">
+              <p>
+                INFEKCIE, RAKOVINA PROSTATY ČI STRES MÔŽU MAŤ NEGATÍVNY VPLYV NA VAŠE
+                INTÍMNE ZDRAVIE<br /><br />
+                <b>Pred:</b> Svaly panvového dna neposkytujú dostatočnú podporu
+                orgánom, čím negatívne ovplyvňujú kontrolu močového mechúra.<br /><br />
+                <b>Behom terapie:</b> EMS kreslo účinne ovplyvňuje svaly panvového dna
+                a zvyšuje prekrvenie.<br /><br />
+                <b>Po:</b> Stimulácia vedie k znovunadobudnutiu kontroly nad svalmi
+                panvového dna a lepšiemu ovládaniu močového mechúra.<br /><br />
+                Výhody:<br /><br />
+                Opravuje a napína panvové dno, čím pomáha mužom a ženám získať
+                kontrolu nad močovým mechúrom. Posilnené svaly panvového dna zlepšujú
+                sexuálnu spokojnosť a schopnosť dosiahnuť orgazmus. Zlepšenie možno
+                pozorovať už po jedinom sedení a výsledky sa zlepšujú počas obdobia
+                liečby. Neinvazívny zákrok bez času na rekonvalescenciu. Počas liečby
+                zostáva pacient úplne oblečení. Žiadna bolesť - počas liečby môžete
+                čítať časpopis.
+              </p>
+            </div>
+          </div>
+
+          <button class="ems-btn accordion-btn" data-target="ems-prekoho">
+            <span class="btn-text">Pre koho je určené?</span>
+            <span class="ems-arrow">&#9654;</span>
+          </button>
+          <div id="ems-prekoho" class="ems-section accordion-content">
+            <div class="content-wrapper">
+              <p>
+                Pre mužov aj ženy s únikom moču, so syndrómom chronických panvových
+                bolestí, so slabosťou svalov panvového dna, s hyperaktívnym močovým
+                mechúrom, pre skvalitnenie intímneho života, pre mužov ako podporná
+                liečba erektilnej dysfunkcie, vhodné aj pre ženy po pôrode na včasnú
+                rehabilitáciu panvového dna, formovanie svalov sedacej časti a pre
+                ženy v menopauze.
+              </p>
+            </div>
+          </div>
+
+          <button class="ems-btn accordion-btn" data-target="ems-nie">
+            <span class="btn-text">Pre koho nie je určené?</span>
+            <span class="ems-arrow">&#9654;</span>
+          </button>
+          <div id="ems-nie" class="ems-section accordion-content">
+            <div class="content-wrapper">
+              <p>
+                - pre osoby po výmene bedrových kĺbov<br />
+                - pre osoby s kovovými implatátmi v oblasti širšieho okolia panvy<br />
+                - pre osoby s kardiostimulatorom<br />
+                - pre osoby s infekciou močových ciest<br />
+                - pre osoby s infekciou v panvovej oblasti<br />
+                - pre osoby s hemoroidmi<br />
+                - pre osoby so zmyslovými alebo kognitívnymi poruchami<br />
+                - Pre ženy s vaginálnym krvácaním<br />
+                - Pre ženy v čase menštruácie<br />
+                - pre ženy v čase tehotenstva<br />
+                - pre osoby s epilepsiou<br />
+                - pre osoby po operácii (do 3 týždňov)<br />
+                - pre osoby s malígnymi nádormi v oblasti stimulácie
+              </p>
+            </div>
+          </div>
+
+          <button class="ems-btn accordion-btn" data-target="ems-zakrok">
+            <span class="btn-text">Ako prebieha zákrok a kedy môžeme pozorovať zlepšenie?</span>
+            <span class="ems-arrow">&#9654;</span>
+          </button>
+          <div id="ems-zakrok" class="ems-section accordion-content">
+            <div class="content-wrapper">
+              <p>
+                Kľúčom k účinnosti je sústredenie elektromagnetickej energie, hĺbka
+                prieniku a stimulácie celého panvového dna. Počas jedinej terapie EMS
+                dochádza k <b>tisíckam kontrakcií svalov panvového dna</b>, vrátane
+                zvieračov močovej rúry a konečníka, čo je extrémne dôležité v
+                reedukácii svalov u pacientov trpiacich inkontinenciou moču a stolice.
+                Počas ošetrenia budete pociťovať kontrakcie svalov panvového dna, čo
+                vedie k ich posilneniu.
+                <b>Zlepšenie môžete pozorovať i po jednom ošetrení</b>. Výsledky sa
+                typicky dostavia <b>v priebehu 4-6 týždňov</b>. Štandardná kúra
+                obsahuje aspoň 6 sedení, ktoré je vhodné časovať 1-2 krát týždenne
+                Ideálne riešenie je aspoň 8-10 sedení: prvých 6 ošetrení 1-2 x
+                týždenne, následne 2 sedenia za mesiac
+              </p>
+            </div>
+          </div>
+
+          <button class="ems-btn accordion-btn" data-target="ems-po">
+            <span class="btn-text">Čo sa deje po procedúre?</span>
+            <span class="ems-arrow">&#9654;</span>
+          </button>
+          <div id="ems-po" class="ems-section accordion-content">
+            <div class="content-wrapper">
+              <p>
+                Po procedúre nie sú žiadne obmedzenia. Môžete pociťovať " svalovicu "
+                svalov panvového dna, ako po cvičení. Dôjde k zlepšeniu kontroly nad
+                močovým mechúrom, zvieračom močovej rúry. Dochádza k ústupu symptómov
+                dráždivého močového mechúra - ústupu nadmerného nutkania na močenie a
+                k ústupu častého močenia u žien, takisto aj zlepšenie pôžitku z
+                intímneho styku a spevnenie panvového dna po pôrode. U mužov dochádza
+                k spevneniu a prekrveniu panvového dna, k zlepšeniu stavov erektilnej
+                dysfunkcie, k zlepšeniu ejakulácie a k liečbe chronických panvových
+                bolestí.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EMS Counting sekcia -->
+    <section id="ems_counting" class="product-section">
+      <div class="section-container">
+        <h3 class="section-main-title">EMS Counting</h3>
+        <p class="section-description">
+          Elektromagnetická stimulácia, je technológia, ktorá využíva jemné
+          elektromagnetické impulzy na aktiváciu svalov. Pomáha zlepšiť svalový
+          tonus, spevniť postavu a podporiť formovanie tela. V oblasti estetiky sa
+          používa najmä na stimuláciu svalov a spevnenie pokožky bez nutnosti
+          aktívneho cvičenia. Ošetrenie je neinvazívne, bezbolestné a účinné aj
+          pri minimálnom pohybe. Výhodou je, že dokáže zacieliť aj na hlboké
+          svaly, ktoré sú pri bežnom pohybe alebo cvičení často ťažko zapojiteľné.
+        </p>
+
+        <!-- Galéria obrázkov EMS Counting -->
+        <div class="ems-gallery" id="ems-counting-gallery">
+          <div class="ems-gallery-grid">
+            <div class="ems-gallery-item">
+              <img src="imgs/lasery/ems_counting/ems_1.png" alt="EMS Counting 1" class="ems-gallery-img ems-counting-img" data-index="0" data-gallery="counting" />
+            </div>
+            <div class="ems-gallery-item">
+              <img src="imgs/lasery/ems_counting/ems_2.png" alt="EMS Counting 2" class="ems-gallery-img ems-counting-img" data-index="1" data-gallery="counting" />
+            </div>
+            <div class="ems-gallery-item">
+              <img src="imgs/lasery/ems_counting/ems_tit.png" alt="EMS Counting 3" class="ems-gallery-img ems-counting-img" data-index="2" data-gallery="counting" />
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <h4 class="section-subtitle">Na čo slúži EMS Counting?</h4>
+          <div class="text-content">
+            <p>
+              <b>Formovanie postavy:</b> <br />Pomáha tvarovať postavu tým, že
+              stimuluje svaly v oblastiach ako brucho, stehná, zadok, ruky či lýtka.
+              Svaly sa aktivujú podobne ako pri cvičení, čím sa zvyšuje ich
+              pevnosť.<br /><b>Redukcia celulitídy:</b><br />
+              Podporuje cirkuláciu krvi a lymfy, čo môže prispieť k zníženiu
+              celulitídy. Pomáha telu s prirodzeným detoxom.<br />
+              <b>Zlepšenie krvného obehu a mikrocirkulácie:</b><br />
+              Stimulácia svalov zlepšuje prietok krvi, čo má pozitívny vplyv na výživu
+              tkanív a celkový stav pokožky.<br />
+              <b>Rehabilitácia a regenerácia:</b><br />
+              Technológia EMS sa využíva aj v medicíne, najmä pri regenerácii po
+              zraneniach. Pomáha obnoviť silu svalov a urýchľuje zotavenie.<br />
+              <b>Omladenie pokožky:</b><br />
+              Vďaka lepšiemu prekrveniu a svalovej stimulácii môže terapia prispieť aj
+              k mladistvejšiemu vzhľadu pokožky – zlepšuje jej pružnosť, štruktúru a
+              vitalitu.
+            </p>
+          </div>
+          
+          <h4 class="section-subtitle">Účinky EMS:</h4>
+          <ul class="benefits-list">
+            <li>Posilnenie svalov – hlboká aktivácia svalová</li>
+            <li>
+              Zvýšenie svalovej hmoty – stimulácia podporuje rast svalových vlákien
+            </li>
+            <li>Spaľovanie tukov – zrýchľuje metabolizmus a pomáha spalovať tuk</li>
+            <li>Zlepšenie krvného obehu – podporuje prekrvenie svalov a kože</li>
+            <li>
+              Redukcia celulitídy – zlepšuje tonus kože a odbúrava tukové zásoby
+            </li>
+            <li>
+              Zníženie bolesti chrbta – posilňuje chrbtové svaly a uvoľňuje napätie
+            </li>
+            <li>Úspora času – efektívny tréning za 30 minút</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CO2 Laser sekcia -->
+    <section id="co2_laser" class="product-section">
+      <div class="section-container">
+        <h2 class="section-main-title">CO2 Frakčný laser</h2>
+        <p class="section-description">
+          Ide o pokrokovú estetickú procedúru, pri ktorej sa pomocou jemných
+          laserových lúčov vytvárajú mikroskopické kanáliky v koži. Tento proces
+          aktivuje tvorbu nového kolagénu a podporuje prirodzenú obnovu pokožky,
+          čo má za následok vyhladenie jemných liniek a vrások, zjednotenie
+          štruktúry pleti a zníženie výskytu jaziev či pigmentových nerovností.
+          Ošetrenie je mimoriadne efektívne pri rejuvenizácii pokožky a riešení
+          rôznych dermatologických ťažkostí. Po zákroku sa môže objaviť mierne
+          začervenanie a šupinatenie kože, ktoré obvykle odznie v priebehu
+          niekoľkých dní.<br /><br />
+          Frakčný CO2 laser predstavuje moderné riešenie v oblasti estetických a
+          gynekologických ošetrení. Špeciálna vaginálna sonda s kĺbovým ramenom a
+          automatickým otáčaním o 360° umožňuje cielenú stimuláciu tkaniva, čím
+          podporuje tvorbu kolagénu, obnovu buniek a zlepšenie elasticity
+          sliznice. Ošetrenie prispieva k spevneniu, hydratácii a celkovej
+          regenerácii vaginálnej oblasti, čo vedie k vyššiemu komfortu a zlepšeniu
+          kvality života pacientky.<br />
+          Vďaka vysokej presnosti zákroku a zabudovaným bezpečnostným prvkom je
+          táto technológia efektívna a šetrná vo všetkých oblastiach jej využitia
+          – či už pri estetických zákrokoch alebo pri liečbe intímnych problémov.
+        </p>
+        
+        <!-- Galéria obrázkov CO2 Laser -->
+        <div class="ems-gallery" id="co2-laser-gallery">
+          <div class="ems-gallery-grid">
+            <div class="ems-gallery-item">
+              <img src="imgs/lasery/co2_laser/CO2_biely.png" alt="CO2 Laser 1" class="ems-gallery-img co2-laser-img" data-index="0" data-gallery="co2" />
+            </div>
+            <div class="ems-gallery-item">
+              <img src="imgs/lasery/co2_laser/CO2_cierny.jpg" alt="CO2 Laser 2" class="ems-gallery-img co2-laser-img" data-index="1" data-gallery="co2" />
+            </div>
+            <div class="ems-gallery-item">
+              <img src="imgs/lasery/co2_laser/CO2_tit.jpg" alt="CO2 Laser 3" class="ems-gallery-img co2-laser-img" data-index="2" data-gallery="co2" />
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <h4 class="section-subtitle">Možnosti ošetrenia</h4>
+          <ul class="treatment-list">
+            <li>Omladenie pokožky a podpora jej regenerácie</li>
+            <li>Vyhladenie vrások a zjednotenie farebného tónu pleti</li>
+            <li>
+              Odstraňovanie jaziev po akné, popáleninách, chirurgických zákrokoch či
+              strií
+            </li>
+            <li>Spevnenie a zosvetlenie intímnych oblastí (vaginal tightening)</li>
+            <li>Riešenie vaginálnej suchosti a zlepšenie prekrvenia sliznice</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diódový laser sekcia -->
+    <section id="diodovy_laser" class="product-section">
+      <div class="section-container">
+        <h2 class="section-main-title">Diódový laserový systém na epiláciu</h2>
+        <p class="section-description">
+          Ide o najpokročilejší diódový laserový systém určený na trvalé
+          odstránenie ochlpenia, ktorý kombinuje štyri rôzne vlnové dĺžky, čím
+          zabezpečuje vysokú účinnosť a bezpečnosť zákroku pri všetkých typoch
+          chĺpkov a fototypoch pokožky.<br /><br />
+          Zariadenie využíva vysokú hustotu energie v kombinácii s pokročilým
+          systémom chladenia, vďaka čomu je procedúra epilácie výrazne rýchlejšia
+          a prakticky bezbolestná. Technológia integruje výhody štyroch vlnových
+          dĺžok – 755 nm, 808 nm, 940 nm a 1064 nm – čím zabezpečuje
+          optimalizované výsledky pri rôznych typoch folikulov a hĺbke ich
+          uloženia. Prístroj je navrhnutý s dôrazom na zlepšenie komfortu pacienta
+          a efektívnosť prevádzky, čím predstavuje inovatívne riešenie v oblasti
+          profesionálneho laserového odstránenia chĺpkov.<br /><br />
+          Tento prístroj je ideálnym riešením pre kozmetické salóny a
+          dermatologické kliniky, ktoré chcú svojim klientom ponúknuť
+          profesionálne ošetrenia s maximálnou presnosťou a účinnosťou.
+        </p>
+        
+        <!-- Galéria obrázkov Diódový laser -->
+        <div class="ems-gallery" id="diodovy-laser-gallery">
+          <div class="ems-gallery-grid">
+            <div class="ems-gallery-item">
+              <img src="imgs/lasery/lasery_na_chlpky/laser_1.jpg" alt="Diódový laser 1" class="ems-gallery-img diodovy-laser-img" data-index="0" data-gallery="diodovy" />
+            </div>
+            <div class="ems-gallery-item">
+              <img src="imgs/lasery/lasery_na_chlpky/laser_2.jpg" alt="Diódový laser 2" class="ems-gallery-img diodovy-laser-img" data-index="1" data-gallery="diodovy" />
+            </div>
+            <div class="ems-gallery-item">
+              <img src="imgs/lasery/lasery_na_chlpky/tit_las.jpg" alt="Diódový laser 3" class="ems-gallery-img diodovy-laser-img" data-index="2" data-gallery="diodovy" />
+            </div>
+          </div>
+        </div>
+
+        <div class="content-section">
+          <h4 class="section-subtitle">Výhody:</h4>
+          <ul class="advantages-list">
+            <li class="advantage-item">
+              <b>Dlhodobý účinok</b><br />Už po niekoľkých ošetreniach dochádza k
+              výraznému spomaleniu rastu chĺpkov, čo vedie k trvalému zníženiu ich
+              hustoty.
+            </li>
+            <li class="advantage-item">
+              <b>Rýchla a komfortná procedúra</b><br />Vďaka pokročilej technológii
+              chladenia je zákrok mimoriadne pohodlný a dobre tolerovaný aj v
+              citlivejších oblastiach.
+            </li>
+            <li class="advantage-item">
+              <b>Bezpečný pre všetky typy pokožky</b><br />Laser je vhodný pre
+              svetlú aj tmavú pleť a umožňuje ošetrenie rôznych fototypov bez rizika
+              poškodenia pokožky.
+            </li>
+            <li class="advantage-item">
+              <b>Minimálne podráždenie a bez zarastajúcich chĺpkov</b><br />Na
+              rozdiel od holenia alebo voskovania nespôsobuje laser podráždenie
+              pokožky a znižuje výskyt zarastených chĺpkov.
+            </li>
+            <li class="advantage-item">
+              <b>Všestranné využitie na celom tele</b><br />Prístroj je vhodný na
+              epiláciu rôznych oblastí vrátane nôh, rúk, podpazušia, intímnej zóny,
+              chrbta či tváre.
+            </li>
+          </ul>
+          
+          <h4 class="section-subtitle technical-title">PRINCÍP FUNKČNOSTI</h4>
+          <div class="technical-content">
+            <p class="technical-description">
+              Systém 4D TECLASER na odstránenie chĺpkov využíva princíp selektívnej
+              absorpcie svetla – ohrieva vlasový stvol a vlasový folikul, čím dochádza
+              k deštrukcii folikulu a okolitých kyslíkových štruktúr, čím sa dosahuje
+              trvalý efekt epilácie.
+            </p>
+            <ul class="wavelength-list">
+              <li class="wavelength-item"><b>755 nm</b> – určené pre svetlé a jemné chĺpky.</li>
+              <li class="wavelength-item">
+                <b>808 nm</b> – zlatý štandard vhodný pre všetky typy pokožky a farby
+                chĺpkov.
+              </li>
+              <li class="wavelength-item">
+                <b>940 nm</b> – spôsobuje koaguláciu mikrociev okolo vlasového
+                folikulu, čím prerušuje prísun živín a podporuje účinnú likvidáciu
+                folikulu.
+              </li>
+              <li class="wavelength-item"><b>1064 nm</b> – ideálne riešenie pre tmavšie typy pokožky.</li>
+            </ul>
+          </div>
+          
+          <h4 class="section-subtitle interface-title">INTUITÍVNE A POUŽÍVATEĽSKY PRÍVETIVÉ ROZHRANIE</h4>
+          <ul class="interface-list">
+            <li>Prispôsobené pre mužov aj ženy</li>
+            <li>Vhodné pre všetky typy pokožky (fototypy I – VI)</li>
+            <li>Možnosť nastavenia 5 úrovní chladenia</li>
+            <li>Viacjazyčné menu</li>
+          </ul>
+          
+          <h4 class="section-subtitle applicator-title">RUČNÝ APLIKÁTOR</h4>
+          <p class="applicator-description">
+            Ručný aplikátor je vybavený inteligentnou dotykovou obrazovkou, na
+            ktorej je možné voľne zobrazovať a nastavovať parametre priamo počas
+            aplikácie.
+          </p>
+          
+          <h4 class="section-subtitle attachment-title">NÁSTAVEC NA TVÁR (voliteľný)</h4>
+          <p class="attachment-description">
+            Umožňuje jednoduché ošetrenie ťažko prístupných oblastí, ako sú uši,
+            nosné dierky a oblasť medzi obočím (glabela).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- O nás sekcia -->
+    <section id="about" class="info-section">
+      <div class="section-container">
+        <h2 class="section-main-title">O nás</h2>
+        <div class="about-content">
+          <p>
+            Sme firma, ktorá sa špecializuje na predaj inovatívneho
+            elektromagnetického kresla EMS. Naša spoločnosť bola založená s cieľom
+            priniesť revolučné riešenia pre zdravie a pohodu ľudí trpiacimi
+            tažkosťami ako sú problemý s panvovým dnom. Našou víziou je zlepšiť
+            kvalitu života ľudí prostredníctvom pokročilých technológií, ktoré sú
+            dostupné a efektívne. Veríme, že zdravie panvového dna je dôležitou
+            súčasťou celkového zdravia a pohody, a preto sa zameriavame na
+            poskytovanie najmodernejších terapeutických riešení. EMS kreslo je naším
+            hlavným produktom, ktorý ponúka neinvazívnu liečbu močovej inkontinencie
+            a posilňuje panvové svaly pomocou elektromagnetických pulzov.
+            Zameriavame na kvalitu, dôveryhodnosť a osobný prístup. Sme tu, aby sme
+            vám pomohli porozumieť našim produktom a ich výhodám. Sme pripravení
+            poskytnúť vám všetky potrebné informácie a podporu.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer zostáva nezmenený -->
+    <footer id="contact">
+      <div class="footer-top">
+        <div class="footer-top-content">
+          <div class="footer-section">
+            <a href="#home">
+              <img src="imgs/logo.png" alt="Logo" class="logo" />
+            </a>
+          </div>
+          <div class="footer-section">
+            <strong>Kontakt</strong>
+            <p>Email: info@mawex.sk</p>
+            <p>Tel: +421 908 168 547</p>
+          </div>
+          <div class="footer-section">
+            <strong>Fakturačné údaje</strong>
+            <p>IČO : 56516169</p>
+            <p>DIČ : 2122329220</p>
+            <p>
+              Adresa : mawex s. r. o. Plynárenska 17563/3E, 821 09 Bratislava
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">mawex &copy; <span id="year"></span></div>
+    </footer>
+
+    <!-- Import JS súboru -->
+    <script src="scripts/footer.js"></script>
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/scrollToTop.js"></script>
+    <script src="scripts/ems_kreslo_scroll.js"></script>
+    <script src="scripts/ems_gallery.js"></script>
+
+    <button id="scrollToTop" aria-label="Späť hore">
+      <span class="scroll-arrow">&#8679;</span>
+    </button>
+  </body>
+</html>
