@@ -322,13 +322,13 @@ header.scrolled {
 
 .image-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 280px);
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
-  justify-items: center;
+  justify-content: center;
   align-items: start;
 }
 
@@ -351,8 +351,8 @@ header.scrolled {
   cursor: pointer;
   position: relative;
   height: 350px;
-  width: 100%;
-  max-width: 280px;
+  width: 280px;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
 }
@@ -512,15 +512,15 @@ header.scrolled {
   min-width: 280px;
 }
 
-/* Špecifická úprava pre EMS Counting galériu */
-#ems-counting-gallery .ems-gallery-grid {
+/* Špecifická úprava pre EMS contouring galériu */
+#ems-contouring-gallery .ems-gallery-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
 }
 
-#ems-counting-gallery .ems-gallery-item {
+#ems-contouring-gallery .ems-gallery-item {
   flex: 1 1 300px;
   max-width: 400px;
   min-width: 280px;
@@ -552,8 +552,8 @@ header.scrolled {
   transition: var(--transition-smooth);
 }
 
-/* Špecifické úpravy pre EMS Counting obrázky */
-.ems-counting-img {
+/* Špecifické úpravy pre EMS contouring obrázky */
+.ems-contouring-img {
   object-fit: contain !important;
   object-position: center;
   background: transparent;
@@ -876,17 +876,29 @@ footer {
   }
 }
 
+@media (max-width: 1274px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 280px);
+    gap: 2rem;
+    justify-content: center;
+  }
+
+  .image-card {
+    width: 280px;
+    height: 350px;
+  }
+}
+
 @media (max-width: 950px) {
   .image-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 280px);
     gap: 1.5rem;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
   }
 
   .image-card {
-    width: 100%;
-    max-width: 280px;
+    width: 280px;
     height: 300px;
   }
 }
@@ -1135,11 +1147,11 @@ footer {
     min-height: 280px;
   }
 
-  #ems-counting-gallery .ems-gallery-grid {
+  #ems-contouring-gallery .ems-gallery-grid {
     justify-content: space-around;
   }
 
-  #ems-counting-gallery .ems-gallery-item {
+  #ems-contouring-gallery .ems-gallery-item {
     flex: 0 1 calc(50% - 1rem);
     max-width: calc(50% - 1rem);
     min-width: 250px;
@@ -1190,11 +1202,11 @@ footer {
     min-width: 300px;
   }
 
-  #ems-counting-gallery .ems-gallery-grid {
+  #ems-contouring-gallery .ems-gallery-grid {
     justify-content: space-around;
   }
 
-  #ems-counting-gallery .ems-gallery-item {
+  #ems-contouring-gallery .ems-gallery-item {
     flex: 0 1 calc(50% - 1rem);
     max-width: calc(50% - 1rem);
     min-width: 300px;
@@ -1227,8 +1239,8 @@ footer {
   }
 
   .image-card {
-    width: 100%;
-    max-width: min(350px, calc(100vw - 4rem));
+    width: min(280px, calc(100vw - 4rem));
+    max-width: 280px;
     height: 300px;
     margin: 0 auto;
   }
@@ -1260,11 +1272,11 @@ footer {
     min-width: auto;
   }
 
-  #ems-counting-gallery .ems-gallery-grid {
+  #ems-contouring-gallery .ems-gallery-grid {
     justify-content: center;
   }
 
-  #ems-counting-gallery .ems-gallery-item {
+  #ems-contouring-gallery .ems-gallery-item {
     flex: 0 1 100%;
     max-width: 100%;
     min-width: auto;
@@ -1318,8 +1330,8 @@ footer {
   }
 
   .image-card {
-    width: 100%;
-    max-width: min(320px, calc(100vw - 3rem));
+    width: min(280px, calc(100vw - 3rem));
+    max-width: 280px;
     height: 300px;
     margin: 0 auto;
   }

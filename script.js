@@ -419,7 +419,7 @@ function initializeImageGallery() {
                 max-height: 85%;
             }
             
-            .lightbox-image[src*="ems_counting"] {
+            .lightbox-image[src*="ems_contouring"] {
                 max-width: 50% !important;
                 max-height: 50% !important;
                 padding: 0.8rem !important;
@@ -480,8 +480,8 @@ function initializeImageGallery() {
         const lightboxImage = lightboxOverlay.querySelector('.lightbox-image');
         lightboxImage.src = imageSrc;
         
-        // Detekcia EMS Counting obrázkov a aplikovanie špeciálnych štýlov
-        if (imageSrc.includes('ems_counting/')) {
+        // Detekcia EMS contouring obrázkov a aplikovanie špeciálnych štýlov
+        if (imageSrc.includes('ems_contouring/')) {
             lightboxImage.style.background = '#ffffff';
             lightboxImage.style.padding = '1rem';
             lightboxImage.style.maxWidth = '35%';
