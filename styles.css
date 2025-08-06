@@ -329,7 +329,7 @@ header.scrolled {
   position: relative;
   z-index: 1;
   justify-items: center;
-  align-items: center;
+  align-items: start;
 }
 
 .image-card-link {
@@ -351,6 +351,8 @@ header.scrolled {
   cursor: pointer;
   position: relative;
   height: 350px;
+  width: 100%;
+  max-width: 280px;
   display: flex;
   flex-direction: column;
 }
@@ -514,13 +516,13 @@ header.scrolled {
 #ems-counting-gallery .ems-gallery-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 2rem;
   justify-content: center;
 }
 
 #ems-counting-gallery .ems-gallery-item {
-  flex: 1 1 280px;
-  max-width: 350px;
+  flex: 1 1 300px;
+  max-width: 400px;
   min-width: 280px;
   min-height: 350px;
   display: flex;

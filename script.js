@@ -1,5 +1,28 @@
 // Moderný JavaScript pre interaktivitu stránky
 
+// Funkcia na detekciu mobilných zariadení
+function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+           ('ontouchstart' in window) ||
+           (navigator.maxTouchPoints > 0) ||
+           (navigator.msMaxTouchPoints > 0);
+}
+
+// Funkcia na aplikovanie mobilných štýlov pre galérie
+function applyMobileGalleryStyles() {
+    const galleryItems = document.querySelectorAll('.ems-gallery-item');
+    const galleryImages = document.querySelectorAll('.ems-gallery-img');
+    
+    galleryItems.forEach(item => {
+        item.style.cursor = 'default';
+        item.style.pointerEvents = 'none';
+    });
+    
+    galleryImages.forEach(img => {
+        img.style.cursor = 'default';
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     // Inicializácia všetkých funkcií
     initializeNavigation();
@@ -9,6 +32,11 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeAnimations();
     initializeFormHandling();
     updateCurrentYear();
+    
+    // Aplikovanie mobilných štýlov pre galérie
+    if (isMobileDevice()) {
+        applyMobileGalleryStyles();
+    }
 });
 
 // Navigácia a mobilné menu
@@ -434,6 +462,11 @@ function initializeImageGallery() {
     // Event listenery pre galériu
     galleryImages.forEach((img, index) => {
         img.addEventListener('click', function() {
+            // Zakázať lightbox na mobilných zariadeniach
+            if (isMobileDevice()) {
+                return; // Nepokračovať vo vykonávaní lightbox funkcie
+            }
+            
             const gallery = this.getAttribute('data-gallery');
             currentGallery = Array.from(document.querySelectorAll(`[data-gallery="${gallery}"]`));
             currentImageIndex = parseInt(this.getAttribute('data-index'));
