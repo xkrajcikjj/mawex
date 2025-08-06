@@ -1228,6 +1228,7 @@ footer {
   .image-card {
     width: 100%;
     max-width: 350px;
+    min-width: 350px;
     height: 300px;
     margin: 0 auto;
   }
@@ -1318,6 +1319,7 @@ footer {
   .image-card {
     width: 100%;
     max-width: 320px;
+    min-width: 320px;
     height: 300px;
     margin: 0 auto;
   }
@@ -1333,58 +1335,6 @@ footer {
 
   .footer-section .logo {
     height: 25px;
-  }
-
-  .navbar {
-    right: 0.5rem;
-    left: auto;
-    max-width: calc(100vw - 1rem);
-    min-width: auto;
-  }
-
-  #main {
-    padding: 120px 1.5rem 4rem;
-  }
-
-  .section-title {
-    font-size: 2rem;
-  }
-
-  .section-main-title {
-    font-size: 1.8rem;
-  }
-
-  .accordion-btn {
-    padding: 1rem;
-  }
-
-  .about-content {
-    padding: 2rem;
-  }
-
-  #scrollToTop {
-    width: 50px;
-    height: 50px;
-    bottom: 1rem;
-    right: 1rem;
-  }
-
-  .image-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    padding: 0 1.5rem;
-  }
-
-  .image-card {
-    width: 100%;
-    max-width: 320px;
-    height: 300px;
-    margin: 0 auto;
-  }
-
-  .product-section {
-    padding: 4rem 1.5rem;
-    margin: 1rem 0;
   }
 }
 
