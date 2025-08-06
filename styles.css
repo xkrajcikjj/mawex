@@ -1223,12 +1223,12 @@ footer {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 0 2rem;
+    justify-items: center;
   }
 
   .image-card {
     width: 100%;
-    max-width: 350px;
-    min-width: 350px;
+    max-width: min(350px, calc(100vw - 4rem));
     height: 300px;
     margin: 0 auto;
   }
@@ -1314,12 +1314,12 @@ footer {
     grid-template-columns: 1fr;
     gap: 1.5rem;
     padding: 0 1.5rem;
+    justify-items: center;
   }
 
   .image-card {
     width: 100%;
-    max-width: 320px;
-    min-width: 320px;
+    max-width: min(320px, calc(100vw - 3rem));
     height: 300px;
     margin: 0 auto;
   }
