@@ -1,5 +1,25 @@
 // Moderný JavaScript pre interaktivitu stránky
 
+// Utility funkcia pre throttle (optimalizácia scroll eventov)
+function throttle(func, wait) {
+    let timeout;
+    let lastRan;
+    return function executedFunction(...args) {
+        if (!lastRan) {
+            func.apply(this, args);
+            lastRan = Date.now();
+        } else {
+            clearTimeout(timeout);
+            timeout = setTimeout(function() {
+                if ((Date.now() - lastRan) >= wait) {
+                    func.apply(this, args);
+                    lastRan = Date.now();
+                }
+            }, wait - (Date.now() - lastRan));
+        }
+    };
+}
+
 // Funkcia na detekciu mobilných zariadení
 function isMobileDevice() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
@@ -165,8 +185,8 @@ function initializeScrollEffects() {
     const header = document.querySelector('header');
     const scrollToTopBtn = document.getElementById('scrollToTop');
     
-    // Header scroll efekt
-    window.addEventListener('scroll', function() {
+    // Header scroll efekt - optimalizované s throttle
+    const handleScroll = throttle(function() {
         const scrollTop = window.pageYOffset;
         
         if (scrollTop > 100) {
@@ -180,7 +200,9 @@ function initializeScrollEffects() {
                 scrollToTopBtn.classList.remove('visible');
             }
         }
-    });
+    }, 100); // Throttle na 100ms
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
     
     // Scroll to top funkcia
     if (scrollToTopBtn) {
@@ -192,30 +214,32 @@ function initializeScrollEffects() {
         });
     }
     
-    // Parallax efekt pre hlavnú sekciu
+    // Parallax efekt - VYPNUTÝ pre lepší výkon
+    // Ak chcete parallax späť, odkomentujte nižšie
+    /*
     const mainSection = document.getElementById('main');
     if (mainSection) {
-        window.addEventListener('scroll', function() {
-            // Aktivovať parallax iba na obrazovkách väčších ako 950px
+        const handleParallax = throttle(function() {
             if (window.innerWidth > 950) {
                 const scrolled = window.pageYOffset;
-                const rate = scrolled * -0.5;
-                mainSection.style.transform = `translateY(${rate}px)`;
+                const rate = scrolled * -0.3; // Znížená intenzita
+                mainSection.style.transform = `translate3d(0, ${rate}px, 0)`; // Použitie translate3d pre GPU akceleráciu
             } else {
-                // Na menších obrazovkách resetovať transform
-                mainSection.style.transform = 'translateY(0px)';
+                mainSection.style.transform = 'translate3d(0, 0, 0)';
             }
-        });
+        }, 16); // ~60fps
         
-        // Reset pri zmene veľkosti okna
+        window.addEventListener('scroll', handleParallax, { passive: true });
+        
         window.addEventListener('resize', function() {
             if (window.innerWidth <= 950) {
-                mainSection.style.transform = 'translateY(0px)';
+                mainSection.style.transform = 'translate3d(0, 0, 0)';
             }
         });
     }
+    */
     
-    // Intersection Observer pre animácie pri scrollovaní
+    // Intersection Observer pre animácie pri scrollovaní - optimalizovaný
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -226,26 +250,18 @@ function initializeScrollEffects() {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
-                
-                // Pridanie pulse animácie pre produktové karty
-                if (entry.target.classList.contains('image-card')) {
-                    setTimeout(() => {
-                        entry.target.classList.add('pulse-animation');
-                        setTimeout(() => {
-                            entry.target.classList.remove('pulse-animation');
-                        }, 2000);
-                    }, 200);
-                }
+                // Prestať pozorovať po animácii pre lepší výkon
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
     
-    // Sledovanie elementov
-    const animatedElements = document.querySelectorAll('.image-card, .product-section, .ems-gallery-item');
+    // Sledovanie elementov - iba produktové sekcie, nie jednotlivé obrázky
+    const animatedElements = document.querySelectorAll('.image-card, .product-section');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        el.style.transition = 'opacity 0.4s ease, transform 0.4s ease'; // Kratšie animácie
         observer.observe(el);
     });
 }
